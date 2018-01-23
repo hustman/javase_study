@@ -1,0 +1,19 @@
+package com.zeus.enumerated;
+
+import java.util.Random;
+
+/**
+ * @author xuxingbo
+ * @Date 2018/1/23
+ */
+public class Enums {
+    private static Random rand = new Random(47);
+    
+    public static <T extends Enum<T>> T random(Class<T> ec){
+        return random(ec.getEnumConstants());
+    }
+    
+    public static <T> T random(T[] values){
+        return values[rand.nextInt(values.length)];
+    }
+}
